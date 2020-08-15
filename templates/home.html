@@ -1,0 +1,345 @@
+<!--<?php
+	require "src/annonces_db.php";
+?>-->
+
+<!DOCTYPE html>
+<!--[if IE 7]>                  <html class="ie7 no-js" lang="fr">     <![endif]-->
+<!--[if lte IE 8]>              <html class="ie8 no-js" lang="fr">     <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--> <html class="not-ie no-js" lang="fr">  <!--<![endif]-->
+    <head>
+
+        <!-- Basic Page Needs -->
+        <meta charset="utf-8">
+        <title>Covoiturage partout au Sénégal - Sunuauto</title>
+        <meta name="description" content="Sunuauto, Plateforme de covoiturage au Sénégal. Poster vos annonces et trouver des passagers ou un conducteur pour vos trajets" />
+        <meta name="keywords" content="covoiturage Sénégal,covoiturage dakar, covoiturage senegal" />
+        <meta name="author" content="">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <!-- Mobile Specific Metas -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- Styles -->
+
+        <!-- Bootstrap -->
+        <link rel="icon" href="/img/car.png" type="image/gif" sizes="16x16">
+
+        <link href="/css/bootstrap.min.css" rel="stylesheet">
+        <!-- Forms -->
+        <link href="/css/jquery.idealforms.css" rel="stylesheet">
+        <!-- Select  -->
+        <link href="/css/jquery.idealselect.css" rel="stylesheet">
+        <!-- Slicknav  -->
+        <link href="/css/slicknav.css" rel="stylesheet">
+        <!-- Main style -->
+        <link href="/css/style.css" rel="stylesheet">
+
+        <!-- Fonts -->
+        <link href="/css/font-awesome.min.css" rel="stylesheet">
+        <link href='//fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+		
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+    </head>
+
+    <body>
+
+        <header class="header">
+			
+            <div class="main-baner">
+
+                <div class="background parallax clearfix">
+
+                    <div class="main-parallax-content">
+
+                        <div class="second-parallax-content">
+
+                            <section class="container">
+
+                                <div class="row">
+
+                                    <div class="main-header-container clearfix">
+
+                                        <div class="col-md-4 col-sm-12 col-xs-12">
+
+                                            <div class="logo">
+                                                <a href="/" style="outline: none;"><h1>SunuAuto</h1></a>
+                                            </div><!-- end .logo -->
+
+                                        </div><!-- end .col-sm-4 -->
+
+                                        <div class="col-md-8 col-sm-8 col-xs-12">
+
+                                            <nav id="nav" class="main-navigation">
+
+                                                <ul class="navigation">
+                                                    <li>
+                                                        <a href="/" class="accueil">Accueil</a>
+                                                    </li>   
+                                                    <li>
+                                                        <a href="/poster" class="poster">Poster <i class="fa fa-plus-circle"></i></a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="/annoncespassagers" class="demandes">Demandes des passagers</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="/commentaires" class="contact">Contact</a>
+                                                    </li>
+                                                </ul>
+
+                                            </nav><!-- end .main-navigation -->
+
+                                        </div><!-- end .col-md-8 -->
+
+                                    </div><!-- end .main-header-container -->
+
+                                </div><!-- end .row -->
+								
+                               	<div class="form-row text-center">
+								    <div class="col-12">
+								        <button type="submit" id="post-btn" style="background-color: #465057" onclick="location.href= '/poster'; " class="btn btn-secondary">
+								        	<i class="fa fa-plus-circle"></i> Poster une annonce</button>
+								        
+								    </div>
+								    
+								</div>
+								
+								<div>
+									<h1 style="text-align: center;display:none;">
+										Votre plateforme de covoiturage simple et gratuite pour économiser !
+									</h1>
+								</div>
+								<div class="form-row text-center" style="display:none;!important">
+								    <div class="col-12">
+								        <button type="submit" id="const-btn" style="background-color: #465057" class="btn btn-secondary">
+								        	<i class="fa fa-search"></i> Consulter les annonces des passagers</button>
+								        <br>
+								    </div>
+								    
+								</div>
+								
+								<div class="alert alert-success" id="succes" style="text-align: center; display:none">
+									<a href="#" class="close" data-dismiss="alert" aria-label="close" title="close">×</a>
+  									<strong>Votre annonce a bien ete postee!</strong> 
+  									Les voyageurs interesses vous contacteront directement.
+								</div>
+                            </section><!-- end .container -->
+							
+                            <div class="col-md-12 col-sm-12 col-xs-12">
+
+                                <div class="search-content">
+									<h2 class="text-center" style="color:black">Covoiturage partout au Sénégal</h2>
+                                    <form id="form_rechercher" name= "form_rechercher" action="/resultats" class="idealforms">
+
+                                        <div class="row">
+
+                                            <div class="col-md-4 col-sm-3 col-xs-12">
+                                                <div class="field">
+                                                	<!--list="cityname"-->
+													<input type="text" id="destination" name="destination" class="form-control" autocomplete="off" placeholder="De:">
+												</div>
+                                                <!--<div class="field">
+                                                    <select id="departd" name="departd">
+                                                        <option value="default">De</option>
+                                                        <option>Dakar</option>
+                                                        <option>Touba</option>
+                                                        <option>Thies</option>
+                                                        <option>AIBD</option>
+                                                        <option>Autre</option>
+                                                    </select>
+                                                </div>-->
+                                            
+                                            </div>
+                                            <!--<div class="col-md-4 col-sm-3 col-xs-12" style="display:none;">
+												<div style="display:none;">
+													<datalist id="cityname">
+														<option value="AIBD">
+				                                        <option value="Dakar">
+				                                        <option value="Kaolack">	
+				                                        <option value="Mbour">
+				                                        <option value="Saly">
+				                                        <option value="Thies">
+				                                        <option value="Touba">
+				                                        <option value="Ziguinchor">
+													</datalist>
+												</div>
+											</div>!-->
+                                            <div class="col-md-4 col-sm-3 col-xs-12">
+                                                
+                                                <!--<div class="field">
+                                                    <select id="destination" name="destination">
+                                                        <option value="default">À</option>
+                                                        <option value="Dakar">Dakar</option>
+                                                        <option value="Touba">Touba</option>
+                                                        <option value="Thies">Thies</option>
+                                                        <option value="AIBD">AIBD</option>
+                                                        <option value="Autre">Autre</option>
+                                                    </select>
+                                                </div>-->
+                                                <!--list="cityname"-->
+                                                <div class="field">
+													<input type="text" id="destinationd" name="destinationd" class="form-control" placeholder="À:" autocomplete="off">
+												</div>
+                                           
+                                            </div>
+
+                                            <div class="col-md-4 col-sm-3 col-xs-12">
+
+                                                <div class="field buttons">
+                                                    <button class="btn btn-lg green-color" type="submit" onclick="return checkEmpty();">Rechercher</button>
+                                                </div>
+												
+                                            </div>
+                                        </div>
+                                    </form>
+                                  	<div class="alert alert-danger" id="emptmess" style="margin-top: 10px; display:none">
+										<a href="#" class="close" data-dismiss="alert" aria-label="close" title="close">×</a>
+										<strong>Une erreur s'est produite!</strong> 
+										Vous devez remplir au moins un des champs.
+									</div>
+                                </div><!-- end .search-content -->
+							
+                            </div><!-- end .col-sm-12 -->
+
+                        </div><!-- end .second-parallax-content -->
+
+                    </div><!-- end .main-parallax-content -->
+
+                </div><!-- end .background .parallax -->
+
+            </div><!-- end .main-baner -->
+			
+        </header><!-- end .header -->
+		
+        <section class="main-content">
+
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+
+                        <div class="page-sub-title textcenter">
+                            <h2>Les dernieres annonces</h2>
+                            <div class="line"></div>
+                        </div><!-- end .page-sub-title -->
+
+                    </div><!-- end .col-md-12 col-sm-12 col-xs-12 -->
+
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+
+                        <div class="page-content">
+
+                            <div class="rides-list">
+								<!--<?php 
+									$db= new Database();
+									$tab=$db->getAll();
+									$i=0;
+									for($i=0; $i<10;$i++){
+										if(!isset($tab[$i])){
+											break;
+										}else{
+											setlocale(LC_TIME, "fr_FR");
+											$new_date= utf8_encode(strftime("%A %d %B %G", strtotime($tab[$i]["date_dept"])));
+											$new_date=ucwords($new_date);
+											echo '<article class="ride-box clearfix" 
+											onclick="location.href= &#39;/details?ville='.$tab[$i]["origin"].'&destin='.$tab[$i]["destin"].'&date='.$new_date.'&id='.$tab[$i]["id_annonce"].'&#39;; ">';
+											echo '<div class="ride-content">';
+											echo '<h3><a href="#">De '.$tab[$i]["origin"].' à '.$tab[$i]["destin"].'</a></h3>';
+											echo 'Poster par <a>'.$tab[$i]["nomprenom"].'</a>';
+											echo '</div>';
+											echo '<ul class="ride-meta">';
+											echo '<li class="ride-date">';
+											echo '<a href="#" class="tooltip-link" data-original-title="Date de départ" data-toggle="tooltip">';
+											echo '<i class="fa fa-calendar"></i>';
+											
+											echo ' Le ' .$new_date;
+											echo ' à '.strftime("%H:%M", strtotime($tab[$i]["heure_dept"])).'</a></li>';
+											echo '<li class="ride-people">';
+											echo '<a href="#" class="tooltip-link" data-original-title="Nombre de places disponibles" data-toggle="tooltip">';
+											echo '<i class="fa fa-user"></i> ' .$tab[$i]["nb_places"].' </i></a>';
+											echo '<li>
+		                                            <a href="/details?ville='.$tab[$i]["origin"].'&destin='.$tab[$i]["destin"].'&date='.$new_date.'&id='.$tab[$i]["id_annonce"].'">
+		                                                <i class="fa fa-file"></i>
+		                                                En savoir plus
+		                                            </a>
+                                      			</li>';
+											echo '</ul></article>';								
+										}
+									}
+									
+								?>-->
+                                <div class="clearfix"></div>
+
+                                <div class="post-pagination pagination-margin clearfix">
+
+                                    <div class="next pull-right">
+                                        <a href="/annonces">
+                                            Voir toutes les annonces
+                                            <i class="fa fa-chevron-right"></i>
+                                        </a>
+                                    </div>
+
+                                </div><!-- end .post-pagination -->
+
+                            </div><!-- end .events-list -->
+
+                        </div><!-- end .page-content -->
+
+                    </div><!-- end .col-md-12 col-sm-12 col-xs-12 -->
+
+                </div><!-- end .row -->
+            </div><!-- end .container -->
+
+        </section><!-- end .main-content -->
+
+        <footer id="footer">
+
+            <div class="footer-copyright">
+				
+                <div class="container">
+                    <div class="row">
+
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+							© 2018 Sénégal,Dakar covoiturage sunuauto.com. Tous droits réservés. 
+                        </div>
+                        
+                    </div><!-- end .row -->
+                </div><!-- end .container -->
+
+            </div><!-- end .footer-copyright -->
+
+        </footer><!-- end #footer -->
+
+
+        <!-- Javascript -->
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <!-- Bootstrap -->
+        <script type="text/javascript" src="/js/bootstrap.min.js"></script>
+        <!-- Main jQuery -->
+        <script type="text/javascript" src="/js/jquery.main.js"></script>
+        <!-- Form -->
+        <script type="text/javascript" src="/js/jquery.idealforms.min.js"></script>
+        <script type="text/javascript" src="/js/jquery.idealselect.min.js"></script>
+        <!--<script type="text/javascript" src="http://code.jquery.com/ui/1.11.2/jquery-ui.js"></script>-->
+        <script type="text/javascript" src="/js/jquery-ui-1.10.4.custom.min.js"></script>
+
+        <!-- Menu -->
+        <script type="text/javascript" src="/js/hoverIntent.js"></script>
+        <script type="text/javascript" src="/js/superfish.js"></script>
+        <!-- Counter-Up  -->
+        <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.3/waypoints.min.js"></script>
+        <script type="text/javascript" src="/js/jquery.counterup.min.js"></script>
+        <!-- Slicknav  -->
+        <script type="text/javascript" src="/js/jquery.slicknav.min.js"></script>
+		<!-- Modernizr -->
+        <script src="/js/modernizr.js"></script>
+		<!--Personal Javascript file-->
+		<script src="/js/add_ride.js"></script>
+		<script src="/js/hover_menu.js"></script>
+    </body>
+</html>

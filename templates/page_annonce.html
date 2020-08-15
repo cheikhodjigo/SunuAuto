@@ -1,0 +1,285 @@
+<!--<?php
+	require "src/annonces_db.php";
+	$db= new Database();
+	$tab=$db->get_details($_GET['id']);
+	if($tab[0]['prix'] > 999){
+		$tab[0]['prix']=number_format($tab[0]['prix'],0,',', ' ');
+	}
+	
+	if((strcasecmp($_GET['ville'], $tab[0]['origin']) != 0) || 
+	(strcasecmp($_GET['destin'], $tab[0]['destin']) != 0)){
+		header("Location: /");
+	}
+	//$_GET['ville'];
+	//$_GET['destin'];
+	
+?>-->
+<!DOCTYPE html>
+<!--[if IE 7]>                  <html class="ie7 no-js" lang="fr">     <![endif]-->
+<!--[if lte IE 8]>              <html class="ie8 no-js" lang="fr">     <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--> <html class="not-ie no-js" lang="fr">  <!--<![endif]-->
+    <head>
+
+        <!-- Basic Page Needs -->
+        <meta charset="utf-8">
+        <title>Poster une annonce - Sunuauto</title>
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <!-- Mobile Specific Metas -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="icon" href="/img/car.png" type="image/gif" sizes="16x16">
+        <!-- Styles -->
+
+        <!-- Bootstrap -->
+        <link href="/css/bootstrap.min.css" rel="stylesheet">
+        <!-- Forms -->
+        <link href="/css/jquery.idealforms.css" rel="stylesheet">
+        <!-- Select  -->
+        <link href="/css/jquery.idealselect.css" rel="stylesheet">
+        <!-- Slicknav  -->
+        <link href="/css/slicknav.css" rel="stylesheet">
+        <!-- Main style -->
+        <link href="/css/style.css" rel="stylesheet">
+			
+		
+        
+		
+        <!-- Fonts -->
+        <link href="/css/font-awesome.min.css" rel="stylesheet">
+        <link href='//fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+		
+    </head>
+
+    <body>
+
+        <header class="header">
+
+            <div class="main-baner">
+
+                <div class="background parallax clearfix">
+
+                    <div class="main-parallax-content">
+
+                        <div class="second-parallax-content">
+
+                            <section class="container">
+
+                                <div class="row">
+
+                                    <div class="main-header-container clearfix">
+
+                                        <div class="col-md-4 col-sm-12 col-xs-12">
+
+                                            <div class="logo">
+                                                <a href="../" style="outline: none;"><h1>SunuAuto</h1></a>
+                                            </div><!-- end .logo -->
+
+                                        </div><!-- end .col-sm-4 -->
+
+                                        <div class="col-md-8 col-sm-8 col-xs-12">
+
+                                            <nav id="nav" class="main-navigation">
+
+                                                <ul class="navigation">
+                                                    <li>
+                                                        <a href="/">Accueil</a>
+                                                    </li>   
+                                                    <li>
+                                                        <a href="/poster">Poster <i class="fa fa-plus-circle"></i></a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="/annoncespassagers">Demandes des passagers</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="/commentaires">Contact</a>
+                                                    </li>
+                                                </ul>
+
+                                            </nav><!-- end .main-navigation -->
+
+                                        </div><!-- end .col-md-8 -->
+
+                                    </div><!-- end .main-header-container -->
+
+
+                                </div><!-- end .row -->
+
+                            </section><!-- end .container -->
+
+                        </div><!-- end .second-parallax-content -->
+
+                    </div><!-- end .main-parallax-content -->
+
+                </div><!-- end .background .parallax -->
+
+            </div><!-- end .main-baner -->
+
+        </header><!-- end .header -->
+
+        <section class="main-content">
+
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-sm-12 col-md-12 col-xs-12">
+
+                        <div class="page-sub-title textcenter">
+                            <h2>Détail du trajet</h2>
+                            <div class="line"></div>
+                        </div><!-- end .page-sub-title -->
+
+                    </div><!-- end .col-lg-12 -->
+					<div class="col-sm-12 col-md-12 col-xs-12">
+						<div class="row">
+							<div class="col-sm-4">
+					  			<h2><a href="">Lieu de départ</a></h2>
+					  		</div>
+					  		<div class="col-sm-4">
+					  	 		<h2> <?php echo $_GET['ville']; ?></h2>
+					  	 	</div>
+					  	 </div>
+					  	 <div class="row">
+							<div class="col-sm-4">
+					  			<h2><a href="">Destination</a></h2>
+					  		</div>
+					  		<div class="col-sm-4">
+					  	 		<h2> <?php echo $_GET['destin']; ?></h2>
+					  	 	</div>
+					  	 </div>
+					 	<div class="row">
+							<div class="col-sm-4">
+					  			<h2><a href="">Date de depart</a></h2>
+					  		</div>
+					  		<div class="col-sm-4">
+					  	 		<h2><?php echo $_GET['date']; 
+					  	 				  echo ' à '.strftime("%H:%M", strtotime($tab[0]["heure_dept"])).'</a></li>';?></h2>
+					  	 	</div>
+					  	 </div>
+					  	 <div class="row">
+							<div class="col-sm-4">
+					  			<h2><a href="">
+					  				<?php 
+					  					if($tab[0]['type_annonce'] == 2)
+											echo 'Nombre de sieges recherchés';
+										else 
+											echo 'Nombre de sieges disponibles';	
+											
+					  				?>
+					  				</a></h2>
+					  		</div>
+					  		<div class="col-sm-4">
+					  	 		<h2><?php echo $tab[0]['nb_places']; ?></h2>
+					  	 	</div>
+					  	 </div>
+					</div>
+					<div class="col-sm-12 col-md-12 col-xs-12">
+
+                        <div class="page-sub-title textcenter">
+                            <h2>
+                            	<?php 
+				  					if($tab[0]['type_annonce'] == 2)
+										echo 'Information du passager';
+									else 
+										echo 'Information du conducteur';	
+				  				?>
+                            </h2>
+                            <div class="line"></div>
+                        </div><!-- end .page-sub-title -->
+                    </div><!-- end .col-lg-12 -->
+                    <div class="row">
+						<div class="col-sm-4">
+				  			<h2><a href="">
+				  					<?php 
+					  					if($tab[0]['type_annonce'] == 2)
+											echo 'L&#39; annonce a été posté par ';
+										else 
+											echo 'Le voyage sera effectue par';	
+					  				?>
+				  				</a></h2>
+				  		</div>
+				  		<div class="col-sm-4">
+				  	 		<h2><?php echo $tab[0]['nomprenom']; ?></h2>
+				  	 	</div>
+				  	 </div>
+				  	 <div class="row">
+						<div class="col-sm-4">
+				  			<h2><a href="">Numero de telephone</a></h2>
+				  		</div>
+				  		<div class="col-sm-4">
+				  	 		<h2><?php echo '<a href="tel:'.$tab[0]['phonenumber'].'">'.$tab[0]['phonenumber'].'</a>'; ?></h2>
+				  	 	</div>
+				  	 </div>
+				  	 <!--<?php 
+				  	 		if(isset($tab[0]['prix']) && $tab[0]['prix'] >0){
+				  	 			echo '<div class="row">
+				  	 					<div class="col-sm-4">
+				  	 						<h2><a href="">Cotisation par personne</a></h2>
+				  	 					</div>
+				  	 				  	<div class="col-sm-4">
+				  	 				  		<h2>'. $tab[0]['prix'].' FCFA </h2>
+				  	 				  	</div>
+				  	 				  </div>';
+				  	 		}
+				  	 ?>-->
+                </div><!-- end .row -->
+            </div><!-- end .container -->
+			<div class="alert alert-danger" id="champ_oblig" style="display:none;">
+  				<a href="#" class="close" data-dismiss="alert" aria-label="close" title="close">×</a>
+  				<strong>Votre annonce n'a pas été postée !</strong> 
+  				Veuillez s'il vous plaît remplir tous les champs obligatoires.
+			</div>
+        </section><!-- end .main-content -->
+
+        <footer id="footer">
+
+            <div class="footer-copyright">
+
+                <div class="container">
+                    <div class="row">
+
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                            © 2018 Sénégal,Dakar covoiturage sunuauto.com. Tous droits réservés.
+                        </div>
+
+                    </div><!-- end .row -->
+                </div><!-- end .container -->
+
+            </div><!-- end .footer-copyright -->
+
+        </footer><!-- end #footer -->
+		
+        <!-- Javascript -->
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <!-- Bootstrap -->
+        <script type="text/javascript" src="/js/bootstrap.min.js"></script>
+        <!-- Main jQuery -->
+        <script type="text/javascript" src="/js/jquery.main.js"></script>
+        <!-- Form -->
+        <script type="text/javascript" src="/js/jquery.idealforms.min.js"></script>
+        <script type="text/javascript" src="/js/jquery.idealselect.min.js"></script>
+        <script type="text/javascript" src="/js/jquery-ui-1.10.4.custom.min.js"></script>
+        <!-- Menu -->
+        <script type="text/javascript" src="/js/hoverIntent.js"></script>
+        <script type="text/javascript" src="/js/superfish.js"></script>
+        <!-- Counter-Up  -->
+        <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.3/waypoints.min.js"></script>
+        <script type="text/javascript" src="/js/jquery.counterup.min.js"></script>
+        <!-- Slicknav  -->
+        <script type="text/javascript" src="/js/jquery.slicknav.min.js"></script>
+        <!-- Modernizr -->
+        <script src="/js/modernizr.js"></script>
+        <!--Personal Javascript-->
+        <script src="/js/add_ride.js"></script>	
+		
+    </body>
+</html>
+

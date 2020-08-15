@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<!--[if IE 7]>                  <html class="ie7 no-js" lang="fr">     <![endif]-->
+<!--[if lte IE 8]>              <html class="ie8 no-js" lang="fr">     <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--> <html class="not-ie no-js" lang="fr">  <!--<![endif]-->
+    <head>
+
+        <!-- Basic Page Needs -->
+        <meta charset="utf-8">
+        <title>Commentaires - Sunuauto</title>
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <!-- Mobile Specific Metas -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="icon" href="/img/car.png" type="image/gif" sizes="16x16">
+		
+        <!-- Styles -->
+
+        <!-- Bootstrap -->
+        <link href="/css/bootstrap.min.css" rel="stylesheet">
+        <!-- Forms -->
+        <link href="/css/jquery.idealforms.css" rel="stylesheet">
+        <!-- Select  -->
+        <link href="/css/jquery.idealselect.css" rel="stylesheet">
+        <!-- Slicknav  -->
+        <link href="/css/slicknav.css" rel="stylesheet">
+        <!-- Main style -->
+        <link href="/css/style.css" rel="stylesheet">
+
+        <!-- Fonts -->
+        <link href="/css/font-awesome.min.css" rel="stylesheet">
+        <link href='//fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+    </head>
+
+    <body>
+
+        <header class="header">
+
+            <div class="main-baner">
+
+                <div class="background parallax clearfix" data-img-width="1600" data-img-height="1064">
+
+                    <div class="main-parallax-content">
+
+                        <div class="second-parallax-content">
+
+                            <section class="container">
+
+                                <div class="row">
+
+                                    <div class="main-header-container clearfix">
+
+                                        <div class="col-md-4 col-sm-12 col-xs-12">
+
+                                            <div class="logo">
+                                                <a href="../" style="outline: none;"><h1>SunuAuto</h1></a>
+                                            </div><!-- end .logo -->
+
+                                        </div><!-- end .col-sm-4 -->
+
+                                        <div class="col-md-8 col-sm-8 col-xs-12">
+
+                                            <nav id="nav" class="main-navigation">
+
+                                                <ul class="navigation">
+                                                    <li>
+                                                        <a href="/" class="accueil">Accueil</a>
+                                                    </li>   
+                                                    <li>
+                                                        <a href="/poster" class="poster">Poster <i class="fa fa-plus-circle"></i></a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="/annoncespassagers" class="demandes">Demandes des passagers</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="/commentaires" class="contact">Contact</a>
+                                                    </li>
+                                                </ul>
+
+                                            </nav><!-- end .main-navigation -->
+
+                                        </div><!-- end .col-md-8 -->
+
+                                    </div><!-- end .main-header-container -->
+									<div class="alert alert-success" id="succes" style="text-align: center; display:none">
+										<a href="#" class="close" data-dismiss="alert" aria-label="close" title="close">×</a>
+	  									<strong>Votre message a bien ete recu!</strong> 
+	  									Nous analyserons votre requete et vous contacterons au besoin.
+									</div>
+
+                                </div><!-- end .row -->
+
+                            </section><!-- end .container -->
+
+                        </div><!-- end .second-parallax-content -->
+
+                    </div><!-- end .main-parallax-content -->
+
+                </div><!-- end .background .parallax -->
+
+            </div><!-- end .main-baner -->
+
+        </header><!-- end .header -->
+
+        <section class="main-content">
+
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+
+                        <div class="page-sub-title textcenter">
+                            <h2>Contactez-nous</h2>
+                            <div class="line"></div>
+                        </div><!-- end .page-sub-title -->
+
+                    </div><!-- end .col-md-12 col-sm-12 col-xs-12 -->
+
+                    <div class="col-sm-12 col-md-12 col-xs-12">
+
+                        <div class="page-content">
+
+                            <form id="contact-form" class="idealforms">
+
+                                <div class="field">
+                                    <input name="username" type="text" placeholder="Nom">
+                                    <span class="error"></span>
+                                </div>
+
+                                <div class="field">
+                                    <input name="email" type="email" placeholder="Adresse Email" >
+                                    <span class="error"></span>
+                                </div>
+
+                                <div class="full-fild">
+                                    <textarea name="message" id="message" cols="5" placeholder="Message" rows="4"></textarea>
+                                </div>
+
+                                <div class="field buttons">
+                                    <button onclick="contacter();" class="btn btn-lg blue-color">Soumettre</button>
+                                </div>
+
+                                <span id="invalid"></span>
+
+                            </form>
+
+                        </div><!-- end .page-content -->
+
+                    </div><!-- end .col-md-9 -->
+
+                </div><!-- end .row -->
+            </div><!-- end .container -->
+
+        </section><!-- end .main-content -->
+		<div class="container">
+		  <!-- Modal -->
+		  <div class="modal fade" id="myModal" role="dialog">
+		    <div class="modal-dialog" >
+		    
+		      <!-- Modal content-->
+		      <div class="modal-content alert alert-success" style="background-color: #e6ffe6;">
+		        <div class="modal-header">
+		          <button type="button" class="close" data-dismiss="modal">&times;</button>
+		          <h4 class="modal-title"><strong>Nous avons bien recu votre message.</strong></h4>
+		        </div>
+		        <div class="modal-body">
+		          <p>Nous vous recontacterons si necessaire sur l'adresse mail que vous nous avez fournis.</p>
+		          <br>
+		          Merci de votre intérêt pour sunuauto.
+		        </div>
+		        <div class="modal-footer">
+		          <button type="button" style="color:green; background-color:#ccffcc" onclick="location.href='/'; " class="btn btn-default" data-dismiss="modal">Close</button>
+		        </div>
+		      </div>
+		      
+		    </div>
+		  </div>
+		  
+		</div>
+
+        <footer id="footer">
+
+            <div class="footer-copyright">
+
+                <div class="container">
+                    <div class="row">
+
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                            © 2018 Sénégal,Dakar covoiturage sunuauto.com. Tous droits réservés.
+                        </div>
+
+                    </div><!-- end .row -->
+                </div><!-- end .container -->
+
+            </div><!-- end .footer-copyright -->
+
+        </footer><!-- end #footer -->
+
+        
+
+        <!-- Javascript -->
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <!-- Bootstrap -->
+        <script type="text/javascript" src="/js/bootstrap.min.js"></script>
+        <!-- Main jQuery -->
+        <script type="text/javascript" src="/js/jquery.main.js"></script>
+        <!-- Form -->
+        <script type="text/javascript" src="/js/jquery.idealforms.min.js"></script>
+        <script type="text/javascript" src="/js/jquery.idealselect.min.js"></script>
+        <script type="text/javascript" src="/js/jquery-ui-1.10.4.custom.min.js"></script>
+        <!-- Menu -->
+        <script type="text/javascript" src="/js/hoverIntent.js"></script>
+        <script type="text/javascript" src="/js/superfish.js"></script>
+        <!-- Counter-Up  -->
+        <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.3/waypoints.min.js"></script>
+        <script type="text/javascript" src="/js/jquery.counterup.min.js"></script>
+        <!-- Slicknav  -->
+        <script type="text/javascript" src="/js/jquery.slicknav.min.js"></script>
+		 <!-- Modernizr -->
+        <script src="/js/modernizr.js"></script>
+        <!--Personal javascript-->
+		<script src="/js/contact.js"></script>
+		<script src="/js/hover_menu.js"></script>
+    </body>
+</html>

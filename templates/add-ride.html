@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<!--[if IE 7]>                  <html class="ie7 no-js" lang="fr">     <![endif]-->
+<!--[if lte IE 8]>              <html class="ie8 no-js" lang="fr">     <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--> <html class="not-ie no-js" lang="fr">  <!--<![endif]-->
+    <head>
+
+        <!-- Basic Page Needs -->
+        <meta charset="utf-8">
+        <title>Poster une annonce - Sunuauto</title>
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <!-- Mobile Specific Metas -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="icon" href="/img/car.png" type="image/gif" sizes="16x16">
+        <!-- Styles -->
+
+        <!-- Bootstrap -->
+        <link href="/css/bootstrap.min.css" rel="stylesheet">
+        <!-- Forms -->
+        <link href="/css/jquery.idealforms.css" rel="stylesheet">
+        <!-- Select  -->
+        <link href="/css/jquery.idealselect.css" rel="stylesheet">
+        <!-- Slicknav  -->
+        <link href="/css/slicknav.css" rel="stylesheet">
+        <!-- Main style -->
+        <link href="/css/style.css" rel="stylesheet">
+			
+		
+        
+		
+        <!-- Fonts -->
+        <link href="/css/font-awesome.min.css" rel="stylesheet">
+        <link href='//fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+		
+		<link href="//cdn.rawgit.com/Eonasdan/bootstrap-datetimepicker/e8bddc60e73c1ec2475f827be36e1957af72e2ea/build/css/bootstrap-datetimepicker.css" rel="stylesheet">
+
+		
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+        
+		
+    </head>
+
+    <body>
+		
+        <header class="header">
+
+            <div class="main-baner">
+
+                <div class="background parallax clearfix">
+
+                    <div class="main-parallax-content">
+
+                        <div class="second-parallax-content">
+
+                            <section class="container">
+
+                                <div class="row">
+
+                                    <div class="main-header-container clearfix">
+
+                                        <div class="col-md-4 col-sm-12 col-xs-12">
+
+                                            <div class="logo">
+                                                <a href="../" style="outline: none;"><h1>SunuAuto</h1></a>
+                                            </div><!-- end .logo -->
+
+                                        </div><!-- end .col-sm-4 -->
+
+                                        <div class="col-md-8 col-sm-8 col-xs-12">
+
+                                            <nav id="nav" class="main-navigation">
+
+                                                <ul class="navigation">
+                                                    <li>
+                                                        <a href="/" class="accueil">Accueil</a>
+                                                    </li>   
+                                                    <li>
+                                                        <a href="/poster" class="poster">Poster <i class="fa fa-plus-circle"></i></a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="/annoncespassagers" class="demandes">Demandes des passagers</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="/commentaires" class="contact">Contact</a>
+                                                    </li>
+                                                </ul>
+
+                                            </nav><!-- end .main-navigation -->
+
+                                        </div><!-- end .col-md-8 -->
+
+                                    </div><!-- end .main-header-container -->
+
+
+                                </div><!-- end .row -->
+
+                            </section><!-- end .container -->
+
+                        </div><!-- end .second-parallax-content -->
+
+                    </div><!-- end .main-parallax-content -->
+
+                </div><!-- end .background .parallax -->
+
+            </div><!-- end .main-baner -->
+
+        </header><!-- end .header -->
+
+        <section class="main-content">
+
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-sm-12 col-md-12 col-xs-12">
+
+                        <div class="page-sub-title textcenter">
+                            <h2>Poster un nouveau voyage</h2>
+                            <div class="line"></div>
+                        </div><!-- end .page-sub-title -->
+
+                    </div><!-- end .col-lg-12 -->
+
+                    <div class="col-sm-12 col-md-12 col-xs-12">
+
+                        <div class="page-content add-new-ride">
+
+                            <form id="form_add_annonces" class="idealforms add-ride">
+                                <div class="field">
+                                	<select id="type_a" name="type_a">
+                                        <option value="default" selected>Je cherche ...</option>
+                                        <option>Des passagers</option>
+                                        <option>Un covoitureur</option>
+                                    </select>
+								</div>
+                                <div class="field">
+									<input type="text" id="destination" name="destination" class="form-control" placeholder="De:" autocomplete="off">
+								</div>
+								<!--<div style="display:none;">
+									<datalist id="cityname">
+										<option value="Aéroport Internationale Blaise Diagne">
+                                        <option value="Dakar">
+                                        <option value="Kaolack">	
+                                        <option value="Mbour">
+                                        <option value="Saly">
+                                        <option value="Thies">
+                                        <option value="Touba">
+                                        <option value="Ziguinchor">
+									</datalist>
+								</div>
+								<div class="field">
+								    <input id="myInput" type="text" name="myCountry" placeholder="Country">
+								</div>-->
+								<div class="field">
+										<input type="text" id="destinationd" name="destinationd" class="form-control" placeholder="À:" autocomplete="off">
+								</div>
+
+								<div class="alert alert-danger" id="champ_ident" style="display:none;">
+					  				<strong>Votre annonce n'a pas été postée !</strong> 
+					  				Le lieu de depart et la destination doivent etre different.
+								</div>
+                                <div class="field" id="date1">
+                                    <input name="event_date" id="event_date" type="text" placeholder="Date de depart" class="datepicker" readonly required>
+                                </div>
+                                 <div class="field" style="display:none;" id="date2">
+                                 	<label for="ldate">Date de départ: </label>
+                                    <input name="event_dat" id="event_dat" type="date" format="dd/mm/yyyy" placeholder="Date de depart">
+                                </div>
+                                <div class="field" id="div_date">
+                                 	<label for="ldate">Heure de départ: </label>
+									<input name="event_time" type="time" placeholder="Heure" class="timepicker" required>
+                                </div>
+                                <div class="field">
+                                    <select id="nb_places" name="nb_places" required>
+                                        <option value="default" selected>Nombre de siéges</option>
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                        <option>5</option>
+                                    </select>
+                                </div>
+                                <div class="field">
+                                    <input name ="nomprenom" type="text" placeholder="Prenom et nom " required>
+                                </div>
+                                <div class="field">
+                                    <input name ="phone" type="text" placeholder="Numéro de téléphone" required>
+                                </div>	
+                               
+                                <div class="field">
+									<input type="number" name="prix" placeholder="Cotisation par personne">
+								</div>
+                                
+                                <div class="field buttons">
+                                    <button id="btn_add" onclick="addRides();" class="btn btn-lg green-color">Poster mon annonce</button>
+                                </div>
+
+                            </form>
+
+                        </div><!-- end .page-content -->
+						
+                    </div><!-- end .col-sm-12 -->
+
+                </div><!-- end .row -->
+            </div><!-- end .container -->
+			<div class="alert alert-danger" id="champ_oblig" style="display:none;">
+  				<strong>Votre annonce n'a pas été postée !</strong> 
+  				Veuillez s'il vous plaît remplir tous les champs obligatoires.
+			</div>
+        </section><!-- end .main-content -->
+		<div class="container">
+		  <!-- Modal -->
+		  <div class="modal fade" id="myModal" role="dialog">
+		    <div class="modal-dialog" >
+		    
+		      <!-- Modal content-->
+		      <div class="modal-content alert alert-success" style="background-color: #e6ffe6;">
+		        <div class="modal-header">
+		          <button type="button" class="close" data-dismiss="modal">&times;</button>
+		          <h4 class="modal-title"><strong>Votre annonce a ete postee avec succes</strong></h4>
+		        </div>
+		        <div class="modal-body">
+		          <p>Les voyageurs interesses vous contacterons sur le numero que vous avez fournis.</p>
+		        </div>
+		        <div class="modal-footer">
+		          <button type="button" style="color:green; background-color:#ccffcc" onclick="location.href='/'; " class="btn btn-default" data-dismiss="modal">Close</button>
+		        </div>
+		      </div>
+		      
+		    </div>
+		  </div>
+		  
+		</div>
+		<div class="container">
+		  <!-- Modal -->
+		  <div class="modal fade" id="myModal1" role="dialog">
+		    <div class="modal-dialog" >
+		    
+		      <!-- Modal content-->
+		      <div class="modal-content alert alert-success" style="background-color: #e6ffe6;">
+		        <div class="modal-header">
+		          <button type="button" class="close" data-dismiss="modal">&times;</button>
+		          <h4 class="modal-title"><strong>Votre annonce a ete postee avec succes</strong></h4>
+		        </div>
+		        <div class="modal-body">
+		          <p>Les conducteurs interesses vous contacterons sur le numero que vous avez fournis.</p>
+		        </div>
+		        <div class="modal-footer">
+		          <button type="button" style="color:green; background-color:#ccffcc" onclick="location.href='/'; " class="btn btn-default" data-dismiss="modal">Close</button>
+		        </div>
+		      </div>
+		      
+		    </div>
+		  </div>
+		  
+		</div> 		  
+        <footer id="footer">
+
+            <div class="footer-copyright">
+
+                <div class="container">
+                    <div class="row">
+
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                            © 2018 Sénégal,Dakar covoiturage sunuauto.com. Tous droits réservés.
+                        </div>
+
+                    </div><!-- end .row -->
+                </div><!-- end .container -->
+
+            </div><!-- end .footer-copyright -->
+			
+        </footer><!-- end #footer -->
+		
+        <!-- Javascript -->
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <!-- Bootstrap -->
+        <script type="text/javascript" src="/js/bootstrap.min.js"></script>
+        <!-- Main jQuery -->
+        <script type="text/javascript" src="/js/jquery.main.js"></script>
+        <!-- Form -->
+        <script type="text/javascript" src="/js/jquery.idealforms.min.js"></script>
+        <script type="text/javascript" src="/js/jquery.idealselect.min.js"></script>
+        <script type="text/javascript" src="/js/jquery-ui-1.10.4.custom.min.js"></script>
+        <!-- Menu -->
+        <script type="text/javascript" src="/js/hoverIntent.js"></script>
+        <script type="text/javascript" src="/js/superfish.js"></script>
+        <!-- Counter-Up  -->
+        <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.3/waypoints.min.js"></script>
+        <script type="text/javascript" src="/js/jquery.counterup.min.js"></script>
+        <!-- Slicknav  -->
+        <script type="text/javascript" src="/js/jquery.slicknav.min.js"></script>
+        <!-- Modernizr -->
+        <script src="/js/modernizr.js"></script>
+        <!--Personal Javascript-->
+        <script src="/js/add_ride.js"></script>	
+		<script>
+			$(document).ready(function(){
+				if(window.innerWidth < 750){
+					document.getElementById("date1").style.display="none";
+					document.getElementById("date2").style.display="block";
+				}
+			});
+		</script>
+		<script src="/js/hover_menu.js"></script>
+   </body>
+</html>

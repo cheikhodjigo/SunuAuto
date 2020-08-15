@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<!--[if IE 7]>                  <html class="ie7 no-js" lang="fr">     <![endif]-->
+<!--[if lte IE 8]>              <html class="ie8 no-js" lang="fr">     <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--> <html class="not-ie no-js" lang="fr">  <!--<![endif]-->
+    <head>
+
+        <!-- Basic Page Needs -->
+        <meta charset="utf-8">
+        <title>Connexion - Sunuauto</title>
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <!-- Mobile Specific Metas -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="icon" href="/img/car.png" type="image/gif" sizes="16x16">
+        <!-- Styles -->
+
+        <!-- Bootstrap -->
+        <link href="/css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+		<style>
+				body{
+					background-color: #f4f1e3;
+				}
+				.center_div{
+					background-color:#63a599;
+					width:500px;
+					height:400px;
+					position:absolute;
+					top:0;
+					bottom:0;
+					left:0;
+					right:0;
+					margin:auto;
+					border-radius:5px;
+				}
+				#bouton{
+					background-color:#212c31;
+					color: #ffffff;
+				}
+				
+				.footer{
+					margin-top:8rem;
+				}
+				#bouton:hover{
+					background-color:#74586f;
+				}
+				@media only screen and (min-width:300px) and (max-width:450px){
+					.center_div{width:320px;height:350px;}
+					.footer{margin-top:3rem;}
+				}
+			</style>
+    </head>
+
+    <body>
+			
+
+            <div class="container center_div">	
+				<h2 class="text-center"><strong>Login</strong><br></h2><br>
+				<div>
+					<!-- Start form -->
+		                    <form id="logadmin">
+		                      <div class="form-group">
+		                        <label for="usern">Username</label>
+		                        <input type="email" class="form-control" id="exampleInputEmail1" name="username" aria-describedby="emailHelp" placeholder="Enter username" requiered>
+		                      </div>
+		                      <div class="form-group">
+		                        <label for="Password1">Password</label>
+		                        <input type="password" class="form-control" name="password" id="password" placeholder="Password" requiered>
+		                      </div>
+		                      <div class="alert alert-danger" id="champ_log" style="display:none;">
+					  				<strong>Invalid username/password</strong> 
+							  </div>
+		                      <div class="form-group">
+		                        <button onclick="loginAdmin();" id="bouton" class="btn btn-outline-light btn-lg btn-block">Se connecter</button>
+		                      </div>
+
+		                    </form>
+					<!-- End form -->
+				</div>
+				<div class="text-center footer">
+		            <p>© 2018 covoiturage sunuauto.com. Tous droits réservés.</p>
+		        </div>
+			</div>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script type="text/javascript" src="/js/bootstrap.min.js"></script>
+
+
+        <script>
+			function loginAdmin() {
+				var form = document.getElementById("logadmin");
+				$("#logadmin").submit(function(event) {
+					event.preventDefault();
+					event.stopPropagation();
+				});
+				if ($(form)[0].checkValidity()) {
+					$.ajax({
+						data : $(form).serialize(),
+						type : 'post',
+						url : '../../src/login.php',
+						success : function(html) {
+							if(html==1){
+								window.location.replace("../administration");
+							}else if(html==2){
+								document.getElementById("champ_log").style.display="block";
+							}else if(html==3){
+								
+							}						
+						}
+					});
+				}	
+			}
+		</script>
+    </body>
